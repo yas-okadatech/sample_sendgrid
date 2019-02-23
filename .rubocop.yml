@@ -1,0 +1,44 @@
+# inherit_from: .rubocop_todo.yml
+
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - 'db/schema.rb'
+    - 'script/**/*'
+    - 'bin/*'
+    - 'vendor/bundle/**/*'
+    - 'bundle_bin/**/*'
+    - 'test/**/*'
+
+AsciiComments:
+  Enabled: false
+
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'app/admin/**/*'
+    - 'spec/**/*'
+    - 'config/routes.rb'
+
+Metrics/LineLength:
+  IgnoredPatterns: ['\A( *)#']
+  Exclude:
+    - 'db/migrate/*'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*'
+
+Rails/CreateTableWithTimestamps:
+  Enabled: true
+
+Style/BracesAroundHashParameters:
+  Exclude:
+    - 'db/fixtures/*.rb'
+
+Style/Documentation:
+  Enabled: false
+
