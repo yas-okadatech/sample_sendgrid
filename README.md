@@ -1,24 +1,9 @@
-# README
+# sample_sendgrid
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## メモ
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- X-SMTPAPI では Dynamic Transactional Templates をサポートしていない (2019-2-23)
+  - The X-SMTPAPI does not support Dynamic Transactional Templates. For sending Dynamic Transactional Templates you need to use v3 Mail Send.
+  - https://sendgrid.com/docs/for-developers/sending-email/how-to-use-a-transactional-template-with-smtp-or-v2/
+  
