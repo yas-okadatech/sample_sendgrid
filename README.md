@@ -1,5 +1,12 @@
 # sample_sendgrid
 
+## command
+
+### Legacy Transactional Template with SMTP
+ ```sh
+bin/rails runner ./scripts/smtp.rb 
+```
+
 
 ## メモ
 
