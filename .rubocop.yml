@@ -22,6 +22,7 @@ Metrics/BlockLength:
     - 'app/admin/**/*'
     - 'spec/**/*'
     - 'config/routes.rb'
+    - 'config/environments/*'
 
 Metrics/LineLength:
   IgnoredPatterns: ['\A( *)#']
