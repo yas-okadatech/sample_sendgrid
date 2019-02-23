@@ -1,0 +1,11 @@
+emails:
+  - address: example+1@example.com
+    name: Alice
+  - address: example+2@example.com
+    name: Bob
+  - address: example+3@example.com
+    name: Carol
+  - address: example+4@example.com
+    name: Dave
+  - address: example+5@example.com
+    name: Ellen

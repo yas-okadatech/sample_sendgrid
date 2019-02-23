@@ -34,3 +34,4 @@
 /.idea
 
 .env.local
+maillist.yml

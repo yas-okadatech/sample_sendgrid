@@ -23,26 +23,39 @@ class SendGridMailer < ApplicationMailer
     #     ],
     #     template_id: ENV['SENDGRID_TEMPLATE_ID']
     # }
-    xsmtp_api_params = {
-      to: [
-        ENV['SENGDRID_TO']
-      ],
+
+    headers['X-SMTPAPI'] = create_xsmtp_api_params.to_json
+    mail(subject: 'hello3', body: '', to: 'dummy@example.com')
+  end
+
+  private
+
+  def create_xsmtp_api_params
+    emails = load_data['emails']
+    to = emails.map { |email| email['address'] }
+    name = emails.map { |email| email['name'] }
+
+    {
+      to: to,
       sub: {
-        ':name': [
-          'Alice'
-        ]
+        ':name': name
       },
-      filters: {
-        templates: {
-          settings: {
-            enable: 1,
-            template_id: ENV['SENDGRID_LEGACY_TEMPLATE_ID']
-          }
+      filters: filters
+    }
+  end
+
+  def load_data
+    YAML.safe_load(File.open(Rails.root.join('maillist.yml')))
+  end
+
+  def filters
+    {
+      templates: {
+        settings: {
+          enable: 1,
+          template_id: ENV['SENDGRID_LEGACY_TEMPLATE_ID']
         }
       }
     }
-
-    headers['X-SMTPAPI'] = xsmtp_api_params.to_json
-    mail(subject: 'hello', body: '', to: ENV['SENGDRID_TO_DUMMY'])
   end
 end
