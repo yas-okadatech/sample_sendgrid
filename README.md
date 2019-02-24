@@ -13,6 +13,12 @@ cp maillist.yml.sample maillist.yml
 bin/rails runner ./scripts/smtp.rb 
 ```
 
+### Dynamic Transactional Template with API V3
+
+ ```sh
+bin/rails runner ./scripts/api_v3.rb 
+```
+
 
 ## メモ
 

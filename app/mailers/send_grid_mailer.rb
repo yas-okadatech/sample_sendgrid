@@ -6,24 +6,6 @@ class SendGridMailer < ApplicationMailer
   end
 
   def by_template
-    # TODO: あとで Web API v3 で使う
-    # xsmtp_api_params = {
-    #     from: {
-    #         email: 'sample_sendgrid@example.com'
-    #     },
-    #     personalizations: [
-    #         {
-    #             to: [
-    #                 { enail: ENV['SENGDRID_TO'] }
-    #             ],
-    #             dynamic_template_data: {
-    #                 name: 'Alice'
-    #             },
-    #         }
-    #     ],
-    #     template_id: ENV['SENDGRID_TEMPLATE_ID']
-    # }
-
     headers['X-SMTPAPI'] = create_xsmtp_api_params.to_json
     mail(subject: 'hello3', body: '', to: 'dummy@example.com')
   end
